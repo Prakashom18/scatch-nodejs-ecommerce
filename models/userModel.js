@@ -4,22 +4,19 @@ mongoose.connect('mongodb//:127.0.0.1:27017/ScatchDb');
 
 const userSchema = mongoose.Schema({
     fullname : String,
-    emai : String,
+    email : String,
     password : String,
-    order : {
-        type : Array,
-        default : []
-    },
     cart : {
         type : Array,
         default : []
-    },    
-    product : {
-        type :  Array,
+    }, 
+    isAdmin : Boolean,
+    orders : {
+        type : Array,
         default : []
-    }
-
-
-
-
+    },
+    picture : String,
+    contact : Number
 })
+
+module.exports = mongoose.module("user",userSchema); 
