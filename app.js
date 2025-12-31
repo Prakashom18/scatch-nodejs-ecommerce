@@ -24,7 +24,7 @@ app.use('/products',productRouter);
 
 
 app.get('/',(req,res)=>{
-    res.send('dashboard');
+    res.render('index');
 })
 
 // app.get()
