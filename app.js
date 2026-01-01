@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const ownerRouter = require('./router/ownerRouter')
 const productRouter = require('./router/productRouter');
 const userRouter = require('./router/userRouter');
-
+const index = require('./router/index');
 const db = require('./config/mongoose-connection');
 
 const app = express();
@@ -21,11 +21,11 @@ app.set('view engine','ejs');
 app.use('/owner',ownerRouter);
 app.use('/users',userRouter);
 app.use('/products',productRouter);
+app.use('/',index)
 
-
-app.get('/',(req,res)=>{
-    res.render('index');
-})
+// app.get('/',(req,res)=>{
+//     res.render('index');
+// })
 
 // app.get()
 
