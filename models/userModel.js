@@ -1,10 +1,26 @@
 const  mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/ScatchDb').then
-(function(){
-    console.log("Connected");
-}).catch(function(err){
-    console.log(err)
+// mongoose.connect('mongodb//:127.0.0.1:27017/ScatchDb');
+
+const userSchema = mongoose.Schema({
+    fullname : {
+    type : String,
+    minLength : 3,
+    trim : true
+},
+    email : String,
+    password : String,
+    cart : {
+        type : Array,
+        default : []
+    }, 
+    isAdmin : Boolean,
+    orders : {
+        type : Array,
+        default : []
+    },
+    picture : String,
+    contact : Number
 })
 
-module.exports = mongoose.connection
+module.exports = mongoose.model("user",userSchema); 
