@@ -13,11 +13,14 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "config": "^4.1.1",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.7",
     "dbgr": "^1.0.0",
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "flash": "^1.1.0",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.0.2"
   }

@@ -1,4 +1,4 @@
-const jw = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const userModel = require('../models/userModel')
 module.exports.isLoggedin =async (req,res,next)=>{
@@ -8,7 +8,7 @@ module.exports.isLoggedin =async (req,res,next)=>{
     }
 
     try{
-        let decoded = jwt.verify(req.cookies,process.env.JWT_KEY); 
+        let decoded = jwt.verify(req.cookies.token,process.env.JWT_KEY); 
         let user = await userModel.findOne({email : decoded.email}).select("-password");
         req.user = user;
         next();
