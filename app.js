@@ -12,16 +12,15 @@ require("dotenv").config();
 const flash = require('connect-flash');
 const expressSession = require('express-session');
 
-
-
 const app = express();
-
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'public')))
 app.set('view engine','ejs');
+app.set('views', 'views');
+
 
 app.use(
     expressSession({
@@ -35,12 +34,6 @@ app.use('/owner',ownerRouter);
 app.use('/users',userRouter);
 app.use('/products',productRouter);
 app.use('/',index)
-
-// app.get('/',(req,res)=>{
-//     res.render('index');
-// })
-
-// app.get()
 
 app.listen(3000,(err)=>{
     console.log("Running on port 3000");

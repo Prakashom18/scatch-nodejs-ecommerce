@@ -1,0 +1,14 @@
+<%- include('partials/header', { title: 'Home Page' }) %>
+<%- include('partials/navbar.ejs')%>
+<h1 class="text-zinc-300">Welcome to Home</h1>
+    <% if(error.length>0) { %>
+        <div class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md ">
+            <span class="inline-block mt-1 mb-1 text-white">
+                <%= error %>
+            </span>
+        </div>    
+
+   <% }%>
+   
+
+

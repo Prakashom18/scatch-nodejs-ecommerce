@@ -3,7 +3,9 @@ const { isLoggedin } = require('../middlewares/isLoggedin');
 const router = express.Router();
 
 router.get('/',(req,res)=>{
-    res.render('index')
+    let error = req.flash("error");
+    res.render('index',{error})
+    // res.render('home')
 })
 
 router.get('/shop',isLoggedin,(req,res)=>{
