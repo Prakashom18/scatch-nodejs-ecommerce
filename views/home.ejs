@@ -1,14 +1,133 @@
 <%- include('partials/header', { title: 'Home Page' }) %>
-<%- include('partials/navbar.ejs')%>
-<h1 class="text-zinc-300">Welcome to Home</h1>
-    <% if(error.length>0) { %>
-        <div class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md ">
-            <span class="inline-block mt-1 mb-1 text-white">
-                <%= error %>
-            </span>
-        </div>    
 
-   <% }%>
-   
+<% if (error && error.length > 0) { %>
+  <div class="absolute top-5 left-1/2 -translate-x-1/2 p-3 bg-red-500 rounded-md">
+    <span class="text-white"><%= error %></span>
+  </div>
+<% } %>
 
+<div class="min-h-screen w-full bg-white p-10">
 
+  <!-- Products Grid (STATIC) -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+    <!-- Product Card -->
+    <div class="bg-white border border-gray-200 rounded-xl shadow-lg p-5">
+      <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+        <img src="https://via.placeholder.com/300" class="h-full object-contain" />
+      </div>
+
+      <div class="mt-4">
+        <h2 class="text-xl font-semibold text-gray-800">Wireless Headphones</h2>
+        <p class="text-sm text-gray-600 mt-2">
+          High quality sound with noise cancellation
+        </p>
+
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-lg font-bold text-green-600">Rs. 3,500</span>
+          <button class="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Duplicate card if needed -->
+    <div class="bg-white border border-gray-200 rounded-xl shadow-lg p-5">
+      <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+        <img src="https://via.placeholder.com/300" class="h-full object-contain" />
+      </div>
+
+      <div class="mt-4">
+        <h2 class="text-xl font-semibold text-gray-800">Smart Watch</h2>
+        <p class="text-sm text-gray-600 mt-2">
+          Track your health and notifications
+        </p>
+
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-lg font-bold text-green-600">Rs. 5,200</span>
+          <button class="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-xl shadow-lg p-5">
+      <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+        <img src="https://via.placeholder.com/300" class="h-full object-contain" />
+      </div>
+
+      <div class="mt-4">
+        <h2 class="text-xl font-semibold text-gray-800">Smart Watch</h2>
+        <p class="text-sm text-gray-600 mt-2">
+          Track your health and notifications
+        </p>
+
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-lg font-bold text-green-600">Rs. 5,200</span>
+          <button class="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+        <div class="bg-white border border-gray-200 rounded-xl shadow-lg p-5">
+      <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+        <img src="https://via.placeholder.com/300" class="h-full object-contain" />
+      </div>
+
+      <div class="mt-4">
+        <h2 class="text-xl font-semibold text-gray-800">Smart Watch</h2>
+        <p class="text-sm text-gray-600 mt-2">
+          Track your health and notifications
+        </p>
+
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-lg font-bold text-green-600">Rs. 5,200</span>
+          <button class="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+        <div class="bg-white border border-gray-200 rounded-xl shadow-lg p-5">
+      <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+        <img src="https://via.placeholder.com/300" class="h-full object-contain" />
+      </div>
+
+      <div class="mt-4">
+        <h2 class="text-xl font-semibold text-gray-800">Smart Watch</h2>
+        <p class="text-sm text-gray-600 mt-2">
+          Track your health and notifications
+        </p>
+
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-lg font-bold text-green-600">Rs. 5,200</span>
+          <button class="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+        <div class="bg-white border border-gray-200 rounded-xl shadow-lg p-5">
+      <div class="w-full h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+        <img src="https://via.placeholder.com/300" class="h-full object-contain" />
+      </div>
+
+      <div class="mt-4">
+        <h2 class="text-xl font-semibold text-gray-800">Smart Watch</h2>
+        <p class="text-sm text-gray-600 mt-2">
+          Track your health and notifications
+        </p>
+
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-lg font-bold text-green-600">Rs. 5,200</span>
+          <button class="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -6,6 +6,10 @@ router.get("/", function(req, res) {
     res.send("hey");
 });
 
+router.get('/admin',(req,res)=>{
+    res.render('admin');
+})
+
 if (process.env.NODE_ENV === "development") {
     router.post('/create', async (req, res) => {
         // Check request body

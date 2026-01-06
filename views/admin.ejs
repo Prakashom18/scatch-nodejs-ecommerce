@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 min-h-screen">
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white border-r p-6">
+    <h2 class="text-2xl font-bold mb-6">Admin Panel</h2>
+    <ul class="space-y-4">
+      <li><a href="#create" class="hover:text-blue-600">Create Product</a></li>
+      <li><a href="#products" class="hover:text-blue-600">All Products</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex items-center justify-center p-6">
+
+    <div class="w-full max-w-6xl bg-white rounded-xl p-8 shadow-sm">
+      <h1 class="text-xl font-semibold mb-4">Create New Product</h1>
+
+      <form action="/admin/create-product" method="POST"
+        class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Product Details -->
+        <div class="bg-gray-50 p-5 rounded-lg border">
+          <h2 class="text-base font-medium mb-3">Product Details</h2>
+
+          <div class="space-y-3">
+            <input type="text" name="image" placeholder="Product Image URL"
+              class="w-full p-2 text-sm rounded border focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+            <input type="text" name="name" placeholder="Product Name"
+              class="w-full p-2 text-sm rounded border focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+            <input type="number" name="price" placeholder="Price"
+              class="w-full p-2 text-sm rounded border focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+            <input type="number" name="discountPrice" placeholder="Discount Price"
+              class="w-full p-2 text-sm rounded border focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+        </div>
+
+        <!-- Panel Details -->
+        <div class="bg-gray-50 p-5 rounded-lg border">
+          <h2 class="text-base font-medium mb-3">Panel Details</h2>
+
+          <div class="space-y-4">
+            <div>
+              <label class="text-sm block mb-1">Background Color</label>
+              <input type="color" name="bgColor" class="w-full h-9 rounded border">
+            </div>
+
+            <div>
+              <label class="text-sm block mb-1">Panel Color</label>
+              <input type="color" name="panelColor" class="w-full h-9 rounded border">
+            </div>
+
+            <div>
+              <label class="text-sm block mb-1">Text Color</label>
+              <input type="color" name="textColor" class="w-full h-9 rounded border">
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="md:col-span-2 flex justify-end">
+          <button
+            class="bg-blue-600 text-white px-6 py-2 text-sm rounded hover:bg-blue-700">
+            Create Product
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

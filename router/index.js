@@ -9,7 +9,8 @@ router.get('/',(req,res)=>{
 })
 
 router.get('/shop',isLoggedin,(req,res)=>{
-    res.send("Shop");
+   let error = req.flash("error")
+    res.render("home",{error});
 }
 )
 
