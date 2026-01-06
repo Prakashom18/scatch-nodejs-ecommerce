@@ -32,7 +32,7 @@ app.use(
 app.use(flash())
 app.use('/owner',ownerRouter);
 app.use('/users',userRouter);
-app.use('/products',productRouter);
+app.use('/product',productRouter);
 app.use('/',index)
 
 app.listen(3000,(err)=>{

@@ -27,7 +27,7 @@
         Create New Product
       </h1>
 
-      <form action="/owners/product/create" method="POST"
+      <form action="/product/create" method="POST"
         class="grid grid-cols-1 md:grid-cols-2 gap-6" enctype="multipart/form-data">
 
         <!-- Product Details -->
@@ -37,8 +37,7 @@
           </h2>
 
           <div class="space-y-3">
-            <input type="text" name="image" placeholder="Product Image URL"
-              class="w-full p-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-blue-400" />
+            <input type="file" name="image" />
 
             <input type="text" name="name" placeholder="Product Name"
               class="w-full p-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-blue-400" />
