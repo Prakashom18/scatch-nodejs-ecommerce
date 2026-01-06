@@ -7,7 +7,8 @@ router.get("/", function(req, res) {
 });
 
 router.get('/admin',(req,res)=>{
-    res.render('admin');
+    let success = req.flash("success");
+    res.render('createproduct',{success});
 })
 
 if (process.env.NODE_ENV === "development") {

@@ -8,6 +8,11 @@
 
 <body class="bg-slate-100 text-slate-700 min-h-screen">
 
+  <% if (success.length > 0) { %>
+  <div class="absolute top-5 left-1/2 -translate-x-1/2 p-3 bg-blue-500 rounded-md">
+    <span class="text-white"><%= success %></span>
+  </div>
+<% } %>
 <div class="flex min-h-screen">
 
   <!-- Sidebar -->
@@ -45,7 +50,7 @@
             <input type="number" name="price" placeholder="Price"
               class="w-full p-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-blue-400" />
 
-            <input type="number" name="discountPrice" placeholder="Discount Price"
+            <input type="number" name="discount" placeholder="Discount Price"
               class="w-full p-2.5 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-blue-400" />
           </div>
         </div>

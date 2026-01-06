@@ -9,7 +9,8 @@ router.get('/',(req,res)=>{
 })
 
 router.post('/create',upload.single('image'),async (req,res)=>{
-   let { name,price,discount,bgColor,panelColor,textColor} = req.body;
+  try{
+    let { name,price,discount,bgColor,panelColor,textColor} = req.body;
     let product = await productModel.create({
         image : req.file.buffer,
         name,
@@ -20,7 +21,14 @@ router.post('/create',upload.single('image'),async (req,res)=>{
         textColor
 
     })
-    res.send(product);
+    req.flash("success","Product Created Successful");
+    res.redirect('/owner/admin');
+  }
+    catch(err){
+        res.send(err.message);
+    }
+    
+
 })
 
 module.exports = router;
