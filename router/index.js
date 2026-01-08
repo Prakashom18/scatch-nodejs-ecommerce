@@ -2,6 +2,7 @@ const express = require('express');
 const { isLoggedin } = require('../middlewares/isLoggedin');
 const router = express.Router();
 const productModel = require('../models/productModel');
+const userModel = require('../models/userModel')
 router.get('/',(req,res)=>{
     let error = req.flash("error");
     res.render('index',{error,loggedin : false})
@@ -11,13 +12,21 @@ router.get('/',(req,res)=>{
 router.get('/shop',isLoggedin,async (req,res)=>{
 //    let error = req.flash("error")
       let product = await productModel.find();
-    res.render("home",{product});
+      let success = req.flash("success");
+    res.render("home",{product,success});
 }
 )
 
 router.get('/addtocart/:id',isLoggedin,async (req,res)=>{
-   let user = await userModel.findOne({user : req.user.email});
-   
+   let user = await userModel.findOne({email : req.user.email});
+   user.cart.push(req.params.productid);
+   await user.save();
+   req.flash("success","Added to cart");
+   res.redirect('/shop');
+})
+
+router.get('/cart',isLoggedin, async (req,res)=>{
+    res.send('cart');
 })
 
 router.get('/logout',isLoggedin, (req,res)=>{

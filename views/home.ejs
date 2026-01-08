@@ -1,5 +1,9 @@
 <%- include('partials/navbar') %>
-
+ <% if (success.length > 0) { %>
+  <div class="absolute top-5 left-1/2 -translate-x-1/2 p-3 bg-blue-500 rounded-md">
+    <span class="text-white"><%= success %></span>
+  </div>
+<% } %>
 
 <div class="min-h-screen w-full bg-white p-10">
 
