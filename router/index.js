@@ -26,7 +26,8 @@ router.get('/addtocart/:id',isLoggedin,async (req,res)=>{
 })
 
 router.get('/cart',isLoggedin, async (req,res)=>{
-    res.render('cart');
+    let product = await productModel.find();
+    res.render('cart',{product});
 })
 
 router.get('/logout',isLoggedin, (req,res)=>{
