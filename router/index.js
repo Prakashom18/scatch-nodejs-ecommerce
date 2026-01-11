@@ -17,7 +17,14 @@ router.get('/shop',isLoggedin,async (req,res)=>{
 }
 )
 
-router.get('/addtocart/:id',isLoggedin,async (req,res)=>{
+router.get('/cart',isLoggedin, async (req,res)=>{
+    // let product = await productModel.find();
+    let user = await userModel.findOne({email:req.user.email}).populate("cart")
+    res.render('cart',{user});
+    
+})
+
+router.get('/addtocart/:productid',isLoggedin,async (req,res)=>{
    let user = await userModel.findOne({email : req.user.email});
    user.cart.push(req.params.productid);
    await user.save();
@@ -25,12 +32,7 @@ router.get('/addtocart/:id',isLoggedin,async (req,res)=>{
    res.redirect('/shop');
 })
 
-router.get('/cart',isLoggedin, async (req,res)=>{
-    // let product = await productModel.find();
-    let user = await userModel.findOne({email:req.user.email}).populate("cart")
-    res.render('cart',{user});
-    console.log(user.cart);
-})
+
 
 router.get('/logout',isLoggedin, (req,res)=>{
     res.redirect('shop');
