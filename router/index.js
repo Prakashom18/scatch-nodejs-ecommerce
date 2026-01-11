@@ -20,7 +20,9 @@ router.get('/shop',isLoggedin,async (req,res)=>{
 router.get('/cart',isLoggedin, async (req,res)=>{
     // let product = await productModel.find();
     let user = await userModel.findOne({email:req.user.email}).populate("cart")
-    res.render('cart',{user});
+     let final = Number(user.cart[0].price)-Number(user.cart[0].discount);
+    res.render('cart',{user,final});
+
     
 })
 
